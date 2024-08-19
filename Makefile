@@ -8,3 +8,5 @@ run:
 	make build-win
 	./bin/app.exe
 
+gen:
+	wire ./internal/app

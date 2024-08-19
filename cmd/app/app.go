@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/icyre/icyre/internal/config"
+	"github.com/icyre/icyre/internal/app"
 	"github.com/joho/godotenv"
 )
 
@@ -15,8 +13,11 @@ func init() {
 
 func main() {
 
-	cfg := config.New()
+	a, err := app.New()
+	if err != nil {
+		panic(err)
+	}
 
-	fmt.Println(cfg)
+	a.Run()
 
 }
